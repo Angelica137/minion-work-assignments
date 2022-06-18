@@ -4,10 +4,9 @@ def solution(data: list, n: int) -> list:
     from :param: data
     :returns: the updated list
     """
-    count = 0
-    jobs = []
-    for i in data:
-        if (i + 1) == i:
-            count += 1
-        if count < n:
-            jobs.append(i)
+    for item in data:
+        count = data.count(item)
+        if count > n:
+            data = [x for x in data if x != item]
+        item += 1
+    return data
