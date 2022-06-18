@@ -5,8 +5,6 @@ def solution(data: list, n: int) -> list:
     :returns: the updated list
     """
     for item in data:
-        #count = data.count(item)
         if data.count(item) > n:
             data = [x for x in data if x != item]
-        item += 1
     return data
