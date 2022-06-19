@@ -1,24 +1,19 @@
-import random
-
-
 def solution(data: list, n: int) -> list:
     """
     Removes the items that repeat more times than :param: n
     from :param: data
     :returns: the updated list
     """
-    if len(data) < 100:
-        for item in data:
-            if data.count(item) > n:
-                data = [x for x in data if x != item]
-        return data
+    return [i for i in data if data.count(i) <= n]
 
 
-data = []
-for i in range(0, 100):
-    n = random.randint(1, 100)
-    data.append(n)
-
-print(len(data))
-
-print(solution(data, 1))
+def solution_string(data, n) -> str:
+    tasks = []
+    output_string = ''
+    for i in data:
+        if i not in tasks and data.count(i) <= n and n > 0:
+            tasks.append(str(i))
+            tasks.append(',')
+    for i in tasks:
+        output_string += i
+    return output_string[:-1]
