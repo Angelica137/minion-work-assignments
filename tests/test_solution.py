@@ -23,7 +23,7 @@ def test_solution_5():
     assert solution([], 6) == []
 
 
-def test_more_than_100():
+def test_more_than_99():
     data = []
     for i in range(0, 100):
         n = random.randint(1, 100)
