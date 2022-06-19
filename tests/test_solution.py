@@ -28,4 +28,4 @@ def test_more_than_100():
     for i in range(0, 100):
         n = random.randint(1, 100)
         data.append(n)
-    assert solution([data], 1) == None
+    assert solution(data, 1) == None

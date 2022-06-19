@@ -7,13 +7,16 @@ def solution(data: list, n: int) -> list:
     from :param: data
     :returns: the updated list
     """
-    if len(data) >= 10:
-        return "No"
+    print(len(data))
+    if len(data) == 100:
+        print("I have more than 100 items")
+    """
     if len(data) < 5:
         for item in data:
             if data.count(item) > n:
                 data = [x for x in data if x != item]
         return data
+    """
 
 
 data = []
@@ -23,4 +26,4 @@ for i in range(0, 100):
 
 print(len(data))
 
-print(solution([data], 1))
+print(solution(data, 1))
