@@ -4,7 +4,17 @@ def solution(data: list, n: int) -> list:
     from :param: data
     :returns: the updated list
     """
-    return [i for i in data if data.count(i) <= n]
+    count = {}
+    for item in data:
+        if item in count:
+            count[item] += 1
+        else:
+            count[item] = 1
+    new_tasks = []
+    for key in count:
+        if count[key] <= n:
+            new_tasks.append(key)
+    return new_tasks
 
 
 def solution_string(data, n) -> str:
