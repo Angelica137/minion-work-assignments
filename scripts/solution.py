@@ -10,11 +10,7 @@ def solution(data: list, n: int) -> list:
             count[item] += 1
         else:
             count[item] = 1
-    new_tasks = []
-    for key in count:
-        if count[key] <= n:
-            new_tasks.append(key)
-    return new_tasks
+    return [k for k in count if count[k] <= n]
 
 
 def solution_string(data, n) -> str:
